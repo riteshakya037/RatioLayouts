@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">RatioLayouts</string>
+    <string name="vertical_ratio">Vertical Ratio</string>
+    <string name="horizontal_ratio">Horizontal Ratio</string>
+    <string name="height">Height</string>
+    <string name="width">Width</string>
+    <string name="fixed_attribute">Fixed Attribute</string>
+    <string name="width_n1x1">FIXED\n%1$s\n%2$dx%3$d</string>
 </resources>
