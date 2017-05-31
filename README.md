@@ -22,17 +22,6 @@ Installation
 
 Gradle
 
-Add this to the top of the file
-
-```
-repositories {
-    maven {
-        url  "http://dl.bintray.com/riteshakya037/maven" 
-    }
-}
-        
-```
-
 ```
 dependencies {
     compile 'com.ritesh:ratiolayout:1.0.0'
