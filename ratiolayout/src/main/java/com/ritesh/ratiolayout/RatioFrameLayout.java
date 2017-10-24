@@ -1,9 +1,7 @@
 package com.ritesh.ratiolayout;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
@@ -12,28 +10,57 @@ import com.ritesh.ratiolayout.models.enums.FixedAttribute;
 
 
 /**
+ * Class that represents a FrameLayout with fixed ratio values
+ * <br><b>Extends</b> FrameLayout
+ * <br><b>Implements</b> RatioBase
  * @author Ritesh Shakya
  */
-
 public class RatioFrameLayout extends FrameLayout implements RatioBase {
+    /**
+     * Float with the vertical (height) ratio value
+     */
     private float verticalRatio = 1;
+    /**
+     * Float with the horizontal (width) ratio value
+     */
     private float horizontalRatio = 1;
+    /**
+     * FixedAttribute with the corresponding enum value for this class (Width)
+     */
     private FixedAttribute fixedAttribute = FixedAttribute.WIDTH;
 
+    /**
+     * Default constructor for RatioFrameLayout
+     * @param context Context of the FrameLayout being extended
+     */
     public RatioFrameLayout(Context context) {
         super(context);
     }
 
+    /**
+     * Builds a new RationFrameLayout instance with the context and attributes for the FrameLayout
+     * @param context Context of the FrameLayout being extended
+     * @param attrs AttributeSet of the FrameLayout being extended
+     */
     public RatioFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(attrs);
     }
-
+    /**
+     * Builds a new RationFrameLayout instance with the context and attributes for the FrameLayout
+     * @param context Context of the FrameLayout being extended
+     * @param attrs AttributeSet of the FrameLayout being extended
+     * @param defStyleAttr Integer with the defined attribute style of the FrameLayout being extended
+     */
     public RatioFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(attrs);
     }
 
+    /**
+     * Initializes AttributeSet
+     * @param attrs AttributeSet extended from FrameLayout
+     */
     private void init(AttributeSet attrs) {
         TypedArray typedArray = getContext().obtainStyledAttributes(
                 attrs,
@@ -44,6 +71,11 @@ public class RatioFrameLayout extends FrameLayout implements RatioBase {
         typedArray.recycle();
     }
 
+    /**
+     * Overrides onMeasure method implemented from View
+     * @param widthMeasureSpec Integer with a certain width
+     * @param heightMeasureSpec Integer with a certain heigth
+     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int originalWidth = MeasureSpec.getSize(widthMeasureSpec);
@@ -57,11 +89,22 @@ public class RatioFrameLayout extends FrameLayout implements RatioBase {
         }
     }
 
+    /**
+     * Overrides setRatio method implemented from RatioBase
+     * @param horizontalRatio float with horizontal ratio
+     * @param verticalRatio float with vertical ratio
+     */
     @Override
     public void setRatio(float horizontalRatio, float verticalRatio) {
         this.setRatio(fixedAttribute, horizontalRatio, verticalRatio);
     }
 
+    /**
+     * Overrides setRatio method implemented from RatioBase with a certain fixed attribute and width & height values
+     * @param fixedAttribute FixedAttribute with a certain fixed attribute
+     * @param horizontalRatio float with horizontal ratio
+     * @param verticalRatio float with vertical ratio
+     */
     @Override
     public void setRatio(FixedAttribute fixedAttribute, float horizontalRatio, float verticalRatio) {
         this.fixedAttribute = fixedAttribute;
@@ -71,16 +114,26 @@ public class RatioFrameLayout extends FrameLayout implements RatioBase {
         this.requestLayout();
     }
 
+    /**
+     * Overrides getHorizontalRatio method from RatioBase
+     * @return float with the current horizontal ratio being used
+     */
     @Override
     public float getHorizontalRatio() {
         return horizontalRatio;
     }
-
+    /**
+     * Overrides getVerticalRatio method from RatioBase
+     * @return float with the current vertical ratio being used
+     */
     @Override
     public float getVerticalRatio() {
         return verticalRatio;
     }
-
+    /**
+     * Overrides getFixedAttribute method from RatioBase
+     * @return FixedAttribute with the current fixed attribute being used
+     */
     @Override
     public FixedAttribute getFixedAttribute() {
         return fixedAttribute;
