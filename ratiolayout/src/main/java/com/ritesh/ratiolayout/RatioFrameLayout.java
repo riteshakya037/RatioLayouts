@@ -38,7 +38,7 @@ public class RatioFrameLayout extends FrameLayout implements RatioBase {
     }
 
     /**
-     * Builds a new RationFrameLayout instance with the context and attributes for the FrameLayout
+     * Builds a new RatioFrameLayout instance with the context and attributes for the FrameLayout
      * @param context Context of the FrameLayout being extended
      * @param attrs AttributeSet of the FrameLayout being extended
      */
@@ -47,7 +47,7 @@ public class RatioFrameLayout extends FrameLayout implements RatioBase {
         init(attrs);
     }
     /**
-     * Builds a new RationFrameLayout instance with the context and attributes for the FrameLayout
+     * Builds a new RatioFrameLayout instance with the context and attributes for the FrameLayout
      * @param context Context of the FrameLayout being extended
      * @param attrs AttributeSet of the FrameLayout being extended
      * @param defStyleAttr Integer with the defined attribute style of the FrameLayout being extended
@@ -74,7 +74,7 @@ public class RatioFrameLayout extends FrameLayout implements RatioBase {
     /**
      * Overrides onMeasure method implemented from View
      * @param widthMeasureSpec Integer with a certain width
-     * @param heightMeasureSpec Integer with a certain heigth
+     * @param heightMeasureSpec Integer with a certain height
      */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
