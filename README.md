@@ -24,7 +24,7 @@ Gradle
 
 ```
 dependencies {
-    compile 'com.ritesh:ratiolayout:1.0.0'
+    compile "com.ritesh:ratiolayout:${latestVersion}"
 }
 ```
 

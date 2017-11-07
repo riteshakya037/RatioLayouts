@@ -100,7 +100,7 @@ public class RatioFrameLayout extends FrameLayout implements RatioBase {
     }
 
     /**
-     * Overrides setRatio method implemented from RatioBase with a certain fixed attribute and width & height values
+     * Overrides setRatio method implemented from RatioBase with a certain fixed attribute and width and height values
      * @param fixedAttribute FixedAttribute with a certain fixed attribute
      * @param horizontalRatio float with horizontal ratio
      * @param verticalRatio float with vertical ratio
