@@ -1,5 +1,31 @@
 [ ![Download](https://api.bintray.com/packages/riteshakya037/maven/ratiolayout/images/download.svg) ](https://bintray.com/riteshakya037/maven/ratiolayout/_latestVersion)
 
+# Depricated
+With introduction of [ConstraintLayout](https://developer.android.com/training/constraint-layout/index.html) you don't have to write either a single line of code or use third-parties.
+
+Here's the example of how to keep 1:1 aspect ratio for your layout using ConstraintLayout:
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/black"
+            app:layout_constraintDimensionRatio="H,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+       </View>
+
+    </android.support.constraint.ConstraintLayout>
+
+
 Ratio Layouts
 ==============================
 
